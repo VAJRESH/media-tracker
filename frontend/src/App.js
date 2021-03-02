@@ -4,7 +4,9 @@ import './index.css';
 
 import Navbar from './component/Navbar/Navbar';
 import LandingPage from './component/LandingPage/LandingPage';
-import Register from './component/register.component';
+import Register from './component/Register-Login/Register';
+import MovieDetails from './component/Details/MovieDetails';
+import TvShowDetails from './component/Details/TvShowDetails'
 
 
 function App() {
@@ -13,9 +15,8 @@ function App() {
       <Navbar />
       <Route path="/" exact component={LandingPage} />
       <Route path="/user/register" component={Register} />
-      {/* <Route path="/add" component={AddBirthday} />
-      <Route path="/edit/:id" component={EditBirthday} />
-      <Route path="/user/login" component={Login} /> */}
+      <Route path="/movie/:id" component={MovieDetails} />
+      <Route path="/tv/:id" component={TvShowDetails} />
     </Router>
   );
 }
