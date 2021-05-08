@@ -1,0 +1,75 @@
+#profile-page{
+    padding: 10px;
+}
+
+.tab-btn-container{
+    display: flex;
+    text-align: center;
+}
+.tab-btn{
+    background-color: rgb(201, 197, 197);
+    border: transparent;
+    outline: transparent;
+    margin: 5px auto;
+    padding: 2px 20px;
+    font-size: 1.2rem;
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 20px;
+}
+#active, .tab-btn:hover{
+    background-color: orange;
+    border-bottom: 2px solid rgb(61, 59, 59);
+}
+.tab-btn:hover{
+    transform: scale(1.1);
+}
+.tab-container h3{
+    margin: 10px 0;
+}
+.tv-show-cards{
+    margin: auto 10px;
+    width: 14rem;
+    display: inline-block;
+}
+.profile-media-cards{
+    min-width: 150px;
+}
+.tv-show-card-details{
+    display: grid;
+}
+.progress-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 5px;
+}
+.progress-bar{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+
+.true, .false{
+    font-size: 1.3rem;
+    color: yellow;
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+}
+.true{
+    text-decoration: line-through;
+    color: rgb(93, 245, 55);
+}
+
+
+
+@media screen and (max-width: 510px){
+    .tv-show-cards{
+        width: 45vw;
+        margin: auto 1vw;
+    }
+    .tab-btn-container{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}

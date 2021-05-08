@@ -7,11 +7,13 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const port = 4000 || process.env.PORT;
-app.set('port', port);
 
 app.use(cors());
 app.use(express.json());
+
+const port = 4000 || process.env.PORT;
+app.set('port', port);
+
 
 // database connection
 const uri = process.env.URI;
@@ -26,16 +28,26 @@ connection.once('open', () => {
     console.log('Mongodb connection successful');
 });
 
-// register and login and logout system
+
+// ----- ROUTES
 const user = require('./routes/auth.routes');
 app.use('/user', user);
 
-// routes for crud actions
-// const addBirthdays = require('./routes/crud_actions');
-// app.use('/days', addBirthdays);
+const trackList = require('./routes/list.routes');
+app.use('/trackList', trackList);
 
-// images folder for saving uploaded avatar
-// app.use('/images', express.static(path.join(__dirname, 'images')));
+const movieList = require('./routes/movie.list.routes');
+app.use('/movie', movieList);
+
+const tvShowList = require('./routes/tvShow.list.routes');
+app.use('/tvShow', tvShowList);
+
+const animeList = require('./routes/anime.list.routes');
+app.use('/anime', animeList);
+
+const wishList = require('./routes/wish.list.routes');
+app.use('/wishList', wishList);
+
 
 
 const publicPath = path.join(__dirname, 'frontend', 'build');

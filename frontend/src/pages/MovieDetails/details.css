@@ -1,0 +1,49 @@
+.details{
+    padding: 20px;
+}
+.movie-title{
+    font-size: 3.5rem;
+}
+.section-heading{
+    font-size: 2rem;
+}
+article{
+    margin: 20px auto;
+}
+P{
+    font-size: 1.34em;
+}
+
+/* collection styles */
+.collection-parts-count{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.poster-details-box{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 10px;
+    margin: 10px;
+}
+.collection-poster{
+    width: 100%;
+    border-radius: 10px;
+}
+.collection-overview{
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .movie-title{
+        font-size: 2.5rem;
+    }
+    .section-heading{
+        font-size: 1.7rem;
+    }
+}
+  

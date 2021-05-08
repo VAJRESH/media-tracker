@@ -1,0 +1,95 @@
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 85vh;
+}
+.form-container > form{
+    border: 1px inset rgb(185, 185, 185);
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(85, 85, 85);
+
+}
+.form-title{
+    background-color: rgb(75, 145, 236);
+    margin: -45px -45px 40px;
+    border-radius: 5px;
+}
+.form-group{
+    display: grid;
+    margin: 30px 10px;
+    position: relative;
+}
+.input-label{
+    position: absolute;
+    top: -1px;
+    left: 5px;
+    font-weight: 500;
+    color: rgb(169, 169, 170);
+    padding: 0px;
+    margin: 0px;
+}
+.form-group > input{
+    border: transparent;
+    outline: transparent;
+    padding: 0px 2px;
+    border-bottom: 1px solid black;
+}
+input:focus + .input-label{
+    animation: slideUp 0.4s ease;
+    top: -20px;
+    left: 0px;
+}
+input:not(:placeholder-shown) + .input-label{
+    top: -20px;
+    left: 0px;
+}
+.error-message{
+    background-color: rgb(255, 226, 226);
+    color: red;
+    font-weight: 800;
+}
+.form-btn{
+    border: 3px inset rgb(255, 83, 52);
+    background-color: rgb(245, 245, 245);
+    color: rgb(255, 0, 0);
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 0;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+.form-btn:last-child{
+    border-color: rgb(63, 255, 57);
+    color: rgb(0, 255, 0);
+    grid-column: 2;
+}
+.form-link{
+    text-decoration: underline;
+    font-weight: 700;
+    color: rgb(10, 76, 175);
+}
+/* animations */
+@keyframes slideUp{
+    from {
+        top: -1px;
+        left: 5px;
+    }
+    to {
+        top: -20px;
+        left: 0px;
+    }
+}
+
+/* effects */
+.form-btn:first-child:hover, .form-btn:first-child:focus{
+    background-color: rgb(255, 83, 52);
+    color: black;
+}
+.form-btn:last-child:hover, .form-btn:last-child:focus{
+    background-color: rgb(63, 255, 57);
+    color: black;
+}

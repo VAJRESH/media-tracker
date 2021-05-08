@@ -1,0 +1,16 @@
+.search-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: fit-content;
+    margin: 10px auto;
+}
+select{
+    margin: 10px;
+    border-radius: 5px;
+    padding: 0 5px;
+    height: fit-content;
+}
+.query-display{
+    padding: 5px 20px;
+
+}
