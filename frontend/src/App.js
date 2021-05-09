@@ -15,13 +15,13 @@ import Register from './pages/Register-Login/Register';
 import Login from './pages/Register-Login/Login';
 import ErrorPage from './component/ErrorBox/ErrorPage';
 
-
 import { saveWatchedMediaIds, saveWishMediaIds } from './common-functions/functions';
 
 // profile page is the default page where user will be redirected if logged in
 // or else user will be again redirected from profile page to home page
 function App() {
-  saveWatchedMediaIds();
+  console.log('render')
+  saveWatchedMediaIds('app');
   saveWishMediaIds();
 
   return (
@@ -40,7 +40,7 @@ function App() {
         <Route exact path="/user/login" component={ Login } />
         <Route exact path={['/', "/profile"]} component={ Profile } />
         
-        <Route component={ErrorPage} />
+        <Route component={ ErrorPage } />
       </Switch>
       <MobileNav />
     </Router>

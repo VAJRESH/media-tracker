@@ -29,6 +29,16 @@ const MoviesTab = React.memo((props) => {
                                     }
                                 </h3>
                             }
+                            {
+                                movie.collection_details[0] === null &&
+                                collection !== 'Stand Alone Movies' &&
+                                <h3>
+                                    {
+                                        collection = collection !== 'Stand Alone Movies' ? 
+                                        'Stand Alone Movies' : null
+                                    }
+                                </h3>
+                            }
                             <section className='tv-show-cards'>
                                 <Link
                                 to={`/movie/${movie.movie_id}`}

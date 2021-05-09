@@ -35,7 +35,7 @@
     outline: transparent;
     border: transparent;
 }
-.fas{
+.card-container .fas{
     font-size: 2rem;
 }
 .load-button button{

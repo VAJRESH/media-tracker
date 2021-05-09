@@ -143,16 +143,17 @@ function netflixScroll(classNameIndex, enable=false){
 
 // fetch tracked media from database and sets in the local storage for so that
 // API calls can be made if any media is being tracked
-function saveWatchedMediaIds(){
+function saveWatchedMediaIds(a='a'){
+    console.log(a);
     const userId = localStorage.getItem('userId');
 
     if(!userId) return;
 
     axios.get(`${API.trackList.list}/${userId}`)
-    .then(res => {
+    .then((res) => {
         console.log('fetched');
-        let mediaIdList = []
-        console.log(res)
+        let mediaIdList = [];
+        console.log(res);
 
         res.data.movies_tracked.forEach((movies) => {
             mediaIdList.push(movies.movie_id);

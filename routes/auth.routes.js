@@ -81,16 +81,16 @@ router.route('/register').post((req, res) => {
     });
 });
 
-router.route('/delete').post((req, res) => {
+router.route('/delete/:id').post((req, res) => {
     
-    console.log(req.body)
-    User.findOneAndDelete({ email: req.body.email }, async function(err, user){
+    console.log(req.params.id)
+    User.findByIdAndDelete(req.params.id , async function(err, user){
         console.log(user)
         if(err) return res.json({ isError: err });
         if(!user) return res.status(401).json({ message: 'Not Registered!' });
 
-        const trackList = await TrackList.remove({ user: user._id });
-        const wishList = await WishList.remove({ user: user._id });
+        const trackList = await TrackList.remove({ user: req.params.id });
+        const wishList = await WishList.remove({ user: req.params.id });
         
         if(trackList && wishList){
             return res.status(200).json({ message: `${user.name}'s account has been deleted` });

@@ -1,14 +1,14 @@
 {
-  "name": "movie-tracker",
+  "name": "media-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "track movies and tv shows",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "heroku-postbuild": "npm install && cd frontend && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Vajresh",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",

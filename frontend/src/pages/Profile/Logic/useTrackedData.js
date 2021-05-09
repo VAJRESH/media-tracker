@@ -1,25 +1,6 @@
-import axios from "axios";
-import { useEffect, useRef, useState } from "react";
-import { Redirect } from "react-router";
+import { useRef, useState } from "react";
 import API from "../../../common-functions/apiEndpoints";
 import { useFetchData } from "../../../common-functions/functions";
-
-// custom hook to query data specific to user to get user details and tracked media lists
-function useFetchUserData(url, userId){
-    const [fetchedData, setFetchedData] = useState();
-
-    useEffect(() => {
-        axios.get(url, {params:{ userId: userId }})
-            .then(res => {
-                console.log(res.data)
-                setFetchedData(res.data);
-            })
-            .catch(err => console.log(err));
-    }, []);
-
-    return fetchedData;
-}
-
 
 function useGetUserDetails(userId){
     const [displayTab, setDisplayTab] = useState('Tv Series');
@@ -69,8 +50,11 @@ function sortByStatus(series1, series2){
     return ( -series1.status.localeCompare(series2.status) );
 }
 
-function sortByCollection(movie){
-    return ( (movie.collection_details[0]) ? 1 : -1 )
+function sortByCollection(movie1, movie2){
+    if(!(movie1.collection_details[0])) return -1;
+    if(!(movie2.collection_details[0])) return -1;
+
+    return ( movie1.collection_details[0].name.localeCompare(movie2.collection_details[0].name) )
 }
 
 function sortByMediaType(media1, media2){
@@ -79,11 +63,6 @@ function sortByMediaType(media1, media2){
 
 function reduceToTotalWatchTime(totalWatchTime, series) {
     return totalWatchTime += series.watched_time; 
-} 
-// let total = 0;
-// tvSeries.forEach(series => {
-//     total += series.watched_time;
-// });
-
+}
 
 export default useGetUserDetails;

@@ -12,7 +12,7 @@ function useHandleClick(propsMessage){
         setMessage(propsMessage);
 
         return () => setMessage()
-    }, [])
+    }, [propsMessage]);
 
     function handleLogout(){
         localStorage.clear();
@@ -23,11 +23,11 @@ function useHandleClick(propsMessage){
 
     function handleDelete() {
         console.log(API.user.delete);
-        const email = localStorage.getItem('email');
+        const userId = localStorage.getItem('userId');
 
         localStorage.clear();
 
-        axios.post(API.user.delete, { email: email })
+        axios.post(`${API.user.delete}/${userId}`)
         .then((res) => {
             console.log(res);
 
