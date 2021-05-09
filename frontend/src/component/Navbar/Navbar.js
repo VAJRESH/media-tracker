@@ -14,6 +14,7 @@ const Navbar = () => {
         <div id='navbar'>
             <Link
             to='/home'
+            tabIndex="0"
             onClick={handleActiveTab} >
                 <span
                 className={`app-name ${activeTab === 'TV Tracker' ? 'active' : ''}`}>

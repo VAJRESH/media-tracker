@@ -21,12 +21,12 @@ const SeriesTab = React.memo((props) => {
                             
                             {
                                 status !== series.status &&
-                                <h3>
+                                <h2>
                                     {
                                         status = status !== series.status ? 
                                         series.status : null
                                     }
-                                </h3>
+                                </h2>
                             }
                             <section className='tv-show-cards'>
                                 <Link

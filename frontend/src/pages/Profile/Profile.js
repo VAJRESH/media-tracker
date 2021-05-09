@@ -1,15 +1,16 @@
 import React from 'react';
-
-import Loading from '../../component/Preloader/Loading';
-import useGetUserDetails from './Logic/useTrackedData';
-import ProfileDetails from '../../component/ProfileInfo/ProfileDetails';
-import SeriesTab from '../../component/ProfileInfo/Tabs/SeriesTab';
-import MoviesTab from '../../component/ProfileInfo/Tabs/MoviesTab';
-import './Profile.css'
-import ErrorPage from '../../component/ErrorBox/ErrorPage';
 import { Redirect } from 'react-router';
-import WatchLaterTab from '../../component/ProfileInfo/Tabs/WatchLaterTab';
-import TabButtons from '../../component/ProfileInfo/Tabs/TabButtons';
+
+import useGetUserDetails from './Logic/useTrackedData';
+import './Profile.css'
+
+const Loading = React.lazy(() => import('../../component/Preloader/Loading'));
+const ProfileDetails = React.lazy(() => import('../../component/ProfileInfo/ProfileDetails'));
+const SeriesTab = React.lazy(() => import('../../component/ProfileInfo/Tabs/SeriesTab'));
+const MoviesTab = React.lazy(() => import('../../component/ProfileInfo/Tabs/MoviesTab'));
+const ErrorPage = React.lazy(() => import('../../component/ErrorBox/ErrorPage'));
+const WatchLaterTab = React.lazy(() => import('../../component/ProfileInfo/Tabs/WatchLaterTab'));
+const TabButtons = React.lazy(() => import('../../component/ProfileInfo/Tabs/TabButtons'));
 
 const Profile = () => {
     // looks for the user id for querying, if not found takes user to landing page

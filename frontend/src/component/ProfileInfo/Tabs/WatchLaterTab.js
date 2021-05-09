@@ -18,14 +18,14 @@ const WatchLaterTab = React.memo((props) => {
                         <React.Fragment key={media._id}>
                             {
                                 type !== media.media_type &&
-                                <h3>
+                                <h2>
                                     {
                                         capitalizeEveryWord(
                                             type = type !== media.media_type ? 
                                             media.media_type : null
                                         )
                                     }
-                                </h3>
+                                </h2>
                             }
                             <section className='tv-show-cards'>
                                 <Link

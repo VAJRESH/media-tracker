@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import './index.css';
-
-import LandingPage from './pages/LandingPage/LandingPage';
-import TvSeries from './pages/TvShowPage/TvSeries';
-import Movies from './pages/Movies/Movies';
-import Profile from './pages/Profile/Profile';
-import Search from './pages/Search/Search';
-import TvShowDetails from './pages/TvSeriesDetails/TvShowDetails';
-import MovieDetails from './pages/MovieDetails/MovieDetails';
-import Navbar from './component/Navbar/Navbar';
-import MobileNav from './component/Navbar/MobileNav/MobileNav';
-import Register from './pages/Register-Login/Register';
-import Login from './pages/Register-Login/Login';
-import ErrorPage from './component/ErrorBox/ErrorPage';
 
 import { saveWatchedMediaIds, saveWishMediaIds } from './common-functions/functions';
+import './index.css';
+
+const LandingPage = lazy(() => import('./pages/LandingPage/LandingPage'));
+const TvSeries = lazy(() => import('./pages/TvShowPage/TvSeries'));
+const Movies = lazy(() => import('./pages/Movies/Movies'));
+const Profile = lazy(() => import('./pages/Profile/Profile'));
+const Search = lazy(() => import('./pages/Search/Search'));
+const TvShowDetails = lazy(() => import('./pages/TvSeriesDetails/TvShowDetails'));
+const MovieDetails = lazy(() => import('./pages/MovieDetails/MovieDetails'));
+const Navbar = lazy(() => import('./component/Navbar/Navbar'));
+const MobileNav = lazy(() => import('./component/Navbar/MobileNav/MobileNav'));
+const Register = lazy(() => import('./pages/Register-Login/Register'));
+const Login = lazy(() => import('./pages/Register-Login/Login'));
+const ErrorPage = lazy(() => import('./component/ErrorBox/ErrorPage'));
+
 
 // profile page is the default page where user will be redirected if logged in
 // or else user will be again redirected from profile page to home page
