@@ -21,7 +21,6 @@ const ErrorPage = lazy(() => import('./component/ErrorBox/ErrorPage'));
 // profile page is the default page where user will be redirected if logged in
 // or else user will be again redirected from profile page to home page
 function App() {
-  console.log('render')
   saveWatchedMediaIds('app');
   saveWishMediaIds();
 
