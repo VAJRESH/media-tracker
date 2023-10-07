@@ -1,4 +1,5 @@
 import React from 'react';
+import './MediaHeadings.css';
 
 // component which displays movie or tv show name and below it its genre(s)
 const MediaHeadingWithGenre = props => {
@@ -16,7 +17,7 @@ const MediaHeadingWithGenre = props => {
             {
                 mediaInfo.genres.map(genre => {
                     return (
-                        <span key={genre.id}>
+                        <span className={`genre genre-${genre.id}`} key={genre.id}>
                             {genre.name}
                         </span>
                     )

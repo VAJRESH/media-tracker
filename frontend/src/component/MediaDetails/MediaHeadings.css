@@ -1,0 +1,23 @@
+.genre{
+    background-color: #ff000035 ;
+    color: #ff0000 ;
+    padding: 3px 8px;
+    margin: 5px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.genre:hover{
+    background-color: #ff0000 ;
+    color: #fff ;
+}
+
+/* Action & Adventure  */
+.genre-10759{
+    background-color: rgba(66, 170, 211,0.3);
+    color: rgb(66, 170, 211); 
+}
+.genre-10759:hover{
+    background-color: rgb(66, 170, 211); 
+    color: #fff ;
+}
