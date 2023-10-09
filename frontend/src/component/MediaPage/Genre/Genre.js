@@ -3,6 +3,7 @@ import React from 'react';
 import Loading from '../../Preloader/Loading';
 import ManageGenres from './Logic/ManageGenres';
 import './Genre.css';
+import '../../../styles/genre.css';
 import displayGenres from './helper/displayGenre';
 import ErrorPage from '../../ErrorBox/ErrorPage';
 

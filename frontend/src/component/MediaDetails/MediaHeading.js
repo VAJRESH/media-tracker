@@ -1,5 +1,5 @@
 import React from 'react';
-import './MediaHeadings.css';
+import '../../styles/genre.css'
 
 // component which displays movie or tv show name and below it its genre(s)
 const MediaHeadingWithGenre = props => {
