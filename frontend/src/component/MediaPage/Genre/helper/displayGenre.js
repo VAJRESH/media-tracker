@@ -5,7 +5,7 @@ function displayGenres(genres, handleClick, className){
         genres.map((genre) => (
             <div
             key={genre.id}
-            className={`genre-box ${className}`}>
+            className={`genre-box ${className} genre genre-${genre.id}`}>
                 <span onClick={() => handleClick(genre)} >
                     {genre.name}
                 </span>
