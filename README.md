@@ -4,7 +4,7 @@
 
 ## Live Demo
 Although You may have to wait for few seconds before it loads. <br/>
-Visit [Media Tracker](https://track-media.herokuapp.com/).
+Visit [Media Tracker](https://media-tracker.onrender.com/).
 
 
 ## Description
