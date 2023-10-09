@@ -61,27 +61,27 @@ const SeasonsInfo = (props) => {
                             TvInfo.seasons.map((season, index) => {
                                 let seasonNumber = index;
                                 let progressBarCount = 0;
-                                let seasonName = season.name;
+                                let seasonName = season?.name;
 
                                 if(isMaxWidth370){
                                     console.log('q')
-                                    seasonName = season.name.length > 16 ?
-                                    season.name.slice(0, 13) + '...' : season.name
+                                    seasonName = season?.name.length > 16 ?
+                                    season?.name.slice(0, 13) + '...' : season?.name
                                 } else if(isMinWidth600 && isMaxWidth800){
                                     console.log('500')
-                                    seasonName = season.name.length > 45 ?
-                                    season.name.slice(0, 42) + '...' : season.name
+                                    seasonName = season?.name.length > 45 ?
+                                    season?.name.slice(0, 42) + '...' : season?.name
                                 } else {
                                     console.log('else')
-                                    seasonName = season.name.length > 23 ?
-                                    season.name.slice(0, 20) + '...' : season.name
+                                    seasonName = season?.name.length > 23 ?
+                                    season?.name.slice(0, 20) + '...' : season?.name
                                 }
                                 
-                                if(watchStatus[season.name].episodes){
+                                if(watchStatus?.[season?.name]?.episodes){
                                     progressBarCount = (
-                                        watchStatus[season.name].episodes.findIndex(value => value === false) >= 0 ?
-                                        watchStatus[season.name].episodes.findIndex(value => value === false) :
-                                        season.episode_count
+                                        watchStatus?.[season?.name]?.episodes?.findIndex(value => value === false) >= 0 ?
+                                        watchStatus?.[season?.name]?.episodes?.findIndex(value => value === false) :
+                                        season?.episode_count
                                     );
                                 }
                                 
@@ -93,30 +93,30 @@ const SeasonsInfo = (props) => {
                                     <div
                                     onClick={ (e) => displayEpisodes(seasonNumber, e) }
                                     className='season-info'
-                                    key={season.id}
+                                    key={season?.id}
                                     >
                                         <input 
                                         type='checkbox'
-                                        checked={watchStatus[season.name].isDone}
-                                        disabled={(+season.episode_count === 0)}
-                                        onChange={ () => seasonStatus(season.name) }
+                                        checked={watchStatus?.[season?.name]?.isDone}
+                                        disabled={(+season?.episode_count === 0)}
+                                        onChange={ () => seasonStatus(season?.name) }
                                         />
-                                        <span value={season.season_number}>
+                                        <span value={season?.season_number}>
                                             { seasonName }
                                         </span>
                                         <progress 
                                             value={progressBarCount}
-                                            max={season.episode_count}
+                                            max={season?.episode_count}
                                         />
                                         <span>
-                                            {progressBarCount}/{season.episode_count}
+                                            {progressBarCount}/{season?.episode_count}
                                         </span>
                                         <section className='episode-info-container'>
                                             {
                                                 episodeData.season_number === seasonNumber &&
                                                 <EpisodeDetails 
                                                 info={episodeData}
-                                                status={watchStatus[season.name].episodes}
+                                                status={watchStatus[season?.name].episodes}
                                                 handleSelect={episodeStatus}
                                                 />
                                             }
